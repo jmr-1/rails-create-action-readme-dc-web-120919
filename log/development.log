@@ -40,3 +40,299 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-11 19:40:34.706148"], ["updated_at", "2020-01-11 19:40:34.706148"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "This is the title"], ["description", "This is the description"], ["created_at", "2020-01-11 19:42:37.505390"], ["updated_at", "2020-01-11 19:42:37.505390"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "First Post"], ["description", "Weird sales post"], ["created_at", "2020-01-11 19:52:23.530191"], ["updated_at", "2020-01-11 19:52:23.530191"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2020-01-11 14:53:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 20ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-01-11 14:53:06 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 363ms (Views: 359.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for ::1 at 2020-01-11 14:54:34 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:2: syntax error, unexpected backslash, expecting ')'
+...);@output_buffer.safe_append='\', show_post_path ) %>'.freez...
+...                              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:3: syntax error, unexpected end, expecting ')'
+'.freeze; end ;@output_buffer.to_s
+          ^~~
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:4: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/posts/index.html.erb:2: syntax error, unexpected backslash, expecting ')'
+app/views/posts/index.html.erb:3: syntax error, unexpected end, expecting ')'
+app/views/posts/index.html.erb:4: syntax error, unexpected ensure, expecting ')'
+app/views/posts/index.html.erb:6: syntax error, unexpected end, expecting ')'
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.2ms)
+Started GET "/posts" for ::1 at 2020-01-11 14:54:59 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+...e_append='", show_post_path) %>'.freeze;@output_buffer.appen...
+...                              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+          end
+              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.8ms)
+Started GET "/posts" for ::1 at 2020-01-11 14:55:29 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+...end='", "/posts/#{post.id}") %>'.freeze;@output_buffer.appen...
+...                              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+          end
+              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+Started GET "/posts" for ::1 at 2020-01-11 14:57:26 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+...ppend='", "post_path(post)") %>'.freeze;@output_buffer.appen...
+...                              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+          end
+              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.1ms)
+Started GET "/posts" for ::1 at 2020-01-11 14:57:35 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+...ppend='", "post_path(post)") %>'.freeze;@output_buffer.appen...
+...                              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+          end
+              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.4ms)
+Started GET "/posts" for ::1 at 2020-01-11 14:57:37 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+...ppend='", "post_path(post)") %>'.freeze;@output_buffer.appen...
+...                              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+          end
+              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/posts/index.html.erb:2: syntax error, unexpected '>'
+app/views/posts/index.html.erb:6: unterminated regexp meets end of file
+app/views/posts/index.html.erb:6: syntax error, unexpected end-of-input, expecting ')'
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.9ms)
+Started GET "/posts" for ::1 at 2020-01-11 14:57:44 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2020-01-11 14:58:37 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:2: syntax error, unexpected '<', expecting ')'
+...utput_buffer.append=( link_to(<%= post.title );@output_buffe...
+...                              ^
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:3: syntax error, unexpected end, expecting ')'
+'.freeze; end ;@output_buffer.to_s
+          ^~~
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:4: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/wilfredoantolinrumingan/Desktop/Flatiron/mod_2/week_4/Saturday 01.11.20/rails-create-action-readme-dc-web-120919/app/views/posts/index.html.erb:6: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/posts/index.html.erb:2: syntax error, unexpected '<', expecting ')'
+app/views/posts/index.html.erb:3: syntax error, unexpected end, expecting ')'
+app/views/posts/index.html.erb:4: syntax error, unexpected ensure, expecting ')'
+app/views/posts/index.html.erb:6: syntax error, unexpected end, expecting ')'
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.1ms)
+Started GET "/posts" for ::1 at 2020-01-11 14:58:47 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2020-01-11 15:08:42 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/wilfredoantolinrumingan/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2020-01-11 15:08:45 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-01-11 15:08:48 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-01-11 15:08:56 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/6WcV1N3ZCjsfG0SymaQUhUU8DxbS7nu142QDj30riAQQuQT3H14VBqAZBBQ2XaJqJumPq7d4T4XmIlOLD4nDA==", "title"=>"King of the hill", "description"=>"Bobbeh", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "King of the hill"], ["description", "Bobbeh"], ["created_at", "2020-01-11 20:08:56.461618"], ["updated_at", "2020-01-11 20:08:56.461618"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/4" for ::1 at 2020-01-11 15:08:56 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+

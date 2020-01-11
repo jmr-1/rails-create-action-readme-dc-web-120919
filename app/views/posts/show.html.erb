@@ -1,2 +1,6 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.description %></p>
+
+<%= link_to('Go back to index', posts_path ) %>
+<br>
+<%= link_to('Make a new post', new_post_path )%>
